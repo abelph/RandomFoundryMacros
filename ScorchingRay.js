@@ -39,13 +39,13 @@ function scorching(num) {
       });
       let toHit = new Roll("1d20+12").evaluate({async: false});   //Change attack modifier here
       toHit.toMessage({
-      rollMode: 'roll',
-      speaker: {alias: name}
+        rollMode: 'roll',
+        speaker: {alias: name}
       });
       let roll = new Roll("{1d6, 2}kh1 + {1d6, 2}kh1").evaluate({async: false});  //Change damage calculation here
       roll.toMessage({
-      rollMode: 'roll',
-      speaker: {alias: name}
+        rollMode: 'roll',
+        speaker: {alias: name}
       }); 
   }
 }
