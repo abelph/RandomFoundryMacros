@@ -1,6 +1,6 @@
-let shot = game.actors.getName("Character Name").data.data.resources.primary.value;
-let sharpRoll = new Roll("1d20 + 11").evaluate({async: false});
-let damageRoll = new Roll("2d8 + 5").evaluate({async: false});
+let shot = game.actors.getName("Character Name").data.data.resources.primary.value;	//Change to proper character name and ensure the primary resource value is currently not being used
+let sharpRoll = new Roll("1d20 + 11").evaluate({async: false});	//Change attack modifier
+let damageRoll = new Roll("2d8 + 5").evaluate({async: false});	//Change damage formula if needed
 
 switch (shot) {
 	case 1:
@@ -59,9 +59,9 @@ switch (shot) {
 }
 
 if(shot == 2) {
-	await game.actors.getName("Character Name").update({"data.resources.primary.value": 0});
+	await game.actors.getName("Character Name").update({"data.resources.primary.value": 0});	//Update character name
 } else if(shot == 1) {
-	await game.actors.getName("Character Name").update({"data.resources.primary.value": (shot + 1)});
+	await game.actors.getName("Character Name").update({"data.resources.primary.value": (shot + 1)});	//Update character name
 } else {
-	await game.actors.getName("Character Name").update({"data.resources.primary.value": 1});
+	await game.actors.getName("Character Name").update({"data.resources.primary.value": 1});	//Update character name
 }
