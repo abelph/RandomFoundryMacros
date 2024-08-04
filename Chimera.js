@@ -11,6 +11,14 @@ switch (shot) {
     			content: ram
 		});
 		let ramRoll = new Roll("4d6").evaluate({async: false});
+		sharpRoll.toMessage({
+			rollMode: 'roll',
+			speaker: {alias: name}
+		});
+		damageRoll.toMessage({
+			rollMode: 'roll',
+			speaker: {alias: name}
+		});
 		ramRoll.toMessage({
 			rollMode: 'roll',
 			speaker: {alias: name}
