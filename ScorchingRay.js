@@ -21,7 +21,7 @@ new Dialog({
   }).render(true);
 
 function scorching(num) {
-	num++;
+  num++;
   const results_html = `<h2>Scorching Ray</h2>`;
 
   ChatMessage.create({
