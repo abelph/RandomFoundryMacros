@@ -20,7 +20,7 @@ new Dialog({
     default:'yes'
   }).render(true);
 
-function scorching(num) {
+async function scorching(num) {
   num++;
   const results_html = `<h2>Scorching Ray</h2>`;
 
@@ -37,15 +37,13 @@ function scorching(num) {
           speaker: ChatMessage.getSpeaker({token: actor}),
           content: shot
       });
-      let toHit = new Roll("1d20+12").evaluate({async: false});   //Change attack modifier here
-      toHit.toMessage({
-        rollMode: 'roll',
-        speaker: {alias: name}
+      let toHit = await new Roll("1d20+12").evaluate({async: true});   //Change attack modifier here
+      await toHit.toMessage({
+        rollMode: 'roll'
       });
-      let roll = new Roll("{1d6, 2}kh1 + {1d6, 2}kh1").evaluate({async: false});  //Change damage calculation here
-      roll.toMessage({
-        rollMode: 'roll',
-        speaker: {alias: name}
+      let roll = await new Roll("{1d6, 2}kh1 + {1d6, 2}kh1").evaluate({async: true});  //Change damage calculation here
+      await roll.toMessage({
+        rollMode: 'roll'
       }); 
   }
 }
